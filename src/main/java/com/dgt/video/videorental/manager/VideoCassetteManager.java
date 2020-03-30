@@ -9,6 +9,7 @@ import com.dgt.video.videorental.dao.VideoCassetteRepo;
 import com.dgt.video.videorental.dao.entity.VideoCassette;
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -26,12 +27,15 @@ public class VideoCassetteManager {
     @Autowired
     public VideoCassetteManager(VideoCassetteRepo videocassetRep) {
         this.videocassetRep = videocassetRep;
+        this.videocassetRep.save(new VideoCassette("Titanic", LocalDate.of(1995, Month.MARCH, 1)));
+//         videoCassetts.add(new VideoCassette("Titanic", LocalDate.of(1995, Month.MARCH, 1)));
+//        videoCassetts.add(new VideoCassette(2L, "Pulp Fiction", LocalDate.of(1990, Month.MAY, 12)));
     }
     public Optional<VideoCassette> findById(long id){
         return videocassetRep.findById(id);
     }
 
-    public Iterable<VideoCassette> findAll(){
+    public List<VideoCassette> findAll(){
         return videocassetRep.findAll();
     }
     public VideoCassette save (VideoCassette videoCassette){

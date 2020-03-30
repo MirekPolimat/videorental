@@ -7,6 +7,7 @@ package com.dgt.video.videorental.api;
 
 import com.dgt.video.videorental.dao.entity.VideoCassette;
 import com.dgt.video.videorental.manager.VideoCassetteManager;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -43,7 +44,7 @@ private VideoCassetteManager videoCassetteManager;
 
     
     @GetMapping("/all")
-    public Iterable<VideoCassette> getAllCassetts(){
+    public List<VideoCassette> getAllCassetts(){
         return videoCassetteManager.findAll();
     }
     @GetMapping

@@ -6,8 +6,7 @@
 package com.dgt.video.videorental.dao;
 
 import com.dgt.video.videorental.dao.entity.VideoCassette;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -15,6 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author miroslawk
  */
 @Repository
-public interface VideoCassetteRepo extends CrudRepository<VideoCassette, Long>{
+public interface VideoCassetteRepo extends JpaRepository<VideoCassette, Long>{
     
 }
